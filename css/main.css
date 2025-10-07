@@ -93,6 +93,21 @@ hr {
   margin: 1rem 0 1rem 0 !important;
 }
 
+input {
+  display: block;
+  text-decoration: none;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border-radius: 7px;
+  color: var(--gray-900);
+  font-weight: bold;
+  font-size: 2rem;
+  font-family: 'Consolas', monospace;
+  /* text-align: center; */
+  border: 0;
+  min-width: 2.5rem;
+}
+
 .btn {
   background-color: var(--teal-500);
   display: block;
@@ -178,7 +193,7 @@ select:focus {
 }
 
 .label {
-  width: 150px;
+  width: 200px;
   display: inline-block;
 }
 
@@ -266,7 +281,13 @@ select:focus {
 .w25 {
   width: 25vw;
 }
+.w30 {
+  width: 30vw;
+}
 
+.w30rem {
+  width: 30rem;
+}
 .w12rem {
   width: 12rem;
 }

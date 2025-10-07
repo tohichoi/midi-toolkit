@@ -11,7 +11,7 @@ export const configComponent = () => ({
     this.template = await (await fetch('js/components/config.html')).text()
 
     this.setupDevices = this.setupDevices.bind(this)
-    await midi.getAccess(this.setupDevices)
+    await midi.getAccess(this.setupDevicesm, { sysex: true })
     this.setupDevices()
 
     // Connect to devices, if present

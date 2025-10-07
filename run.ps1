@@ -1,0 +1,1 @@
+& npx http-server -S -C cert/cert.pem -K cert/key.pem -run

@@ -285,6 +285,16 @@ export function sendCCMessage(deviceId, channel, cc, value) {
   }
 }
 
+export function sendSysExMessage(deviceId, channel, value) {
+  // if (!validMessageParameters(channel, cc, value)) return;
+
+  const device = getOutputDevice(deviceId);
+  if (device) {
+    device.send(value);
+    log(LOG_LEVEL.DEBUG, `Sent SysEx message: ${value} on channel: ${channel}`);
+  }
+}
+
 // ===============================================================================
 // Send a NPRM with 3 or 4 MIDI messages
 // ===============================================================================

@@ -7,6 +7,40 @@
 </div>
 
 <section>
+  <header>System Exclusive Messages</header>
+
+  <div class="row">
+    <div class="label">Manufacturer:</div>
+    <select x-model="selectedManufacturers">
+      <template x-for="manufacturer in supportedManufacturers">
+        <option :value="manufacturer" x-text="manufacturer"></option>
+      </template>
+    </select>
+  </div>
+
+  <div class="row">
+    <div class="label">Data:</div>
+    <input type="text" class="w30rem" x-model="sysExString" placeholder="F0 7E 7F 09 01 F7" />
+    <button class="btn inline" @click="sendSysEx"><i class="fas fa-bolt fa-fw"></i> SEND SysEx</button>
+  </div>
+
+  <div class="row">
+    <div class="label">Explanation:</div>
+    <ul style="list-style-type: disc; padding-left: 2rem;">
+      <template x-for="s in interpretSysEx(sysExString)">
+        <li x-text="s"></li>
+      </template>
+    </ul>
+    <!-- <div x-text="interpretSysEx(sysExString)"></div> -->
+  </div>
+
+  <!-- <div class="row">
+    <div class="label"></div>
+    <button class="btn inline" @click="sendSysEx"><i class="fas fa-bolt fa-fw"></i> SEND SysEx</button>
+  </div> -->
+</section>
+
+<section>
   <header>Control Messages (CC)</header>
 
   <div class="row">
